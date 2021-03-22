@@ -25,6 +25,8 @@ class BaseOptions():
         parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
         parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints', help='models are saved here')
         # model parameters
+        parser.add_argument('--dif_data_augm', type=str, default='', help='differential data augmentation currenly only for pix2pix models. [color | translation | cutout | color,cutout|...|color,translation,cutout]')
+        parser.add_argument('--diff_data_augm_D', type=str, default='', help='A|B')
         parser.add_argument('--model', type=str, default='cycle_gan', help='chooses which model to use. [cycle_gan | pix2pix | test | colorization]')
         parser.add_argument('--input_nc', type=int, default=3, help='# of input image channels: 3 for RGB and 1 for grayscale')
         parser.add_argument('--output_nc', type=int, default=3, help='# of output image channels: 3 for RGB and 1 for grayscale')
